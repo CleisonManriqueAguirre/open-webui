@@ -69,7 +69,29 @@ Expected health response:
 {"status": true}
 ```
 
-## 3) Stop / reset
+## 3) (Optional) Pull a small local model + embeddings for RAG
+
+If you want to test **local chat + RAG** quickly, pull a small Ollama model plus an embedding model.
+
+> These commands pull models **inside** the `ollama` container created by `docker-compose.yaml`.
+
+```bash
+# small/cheap chat model for testing
+docker exec ollama ollama pull qwen2.5:3b
+
+# embedding model for RAG
+docker exec ollama ollama pull nomic-embed-text
+
+# verify
+docker exec ollama ollama list
+```
+
+Then in Open WebUI (http://localhost:3000):
+- Ensure Ollama is connected (default in this compose setup)
+- In **Admin Settings → RAG / Documents / Embeddings**, select the embedding model `nomic-embed-text`
+- Upload your `.md` file in **Documents/Knowledge**, wait for indexing, then ask questions referencing that content
+
+## 4) Stop / reset
 
 ```bash
 # stop containers (keeps volumes/data)
