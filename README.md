@@ -107,6 +107,8 @@ This will start the Open WebUI server, which you can access at [http://localhost
 
 ### Quick Start with Docker 🐳
 
+**Windows + WSL2 users:** see [DEPLOY_DOCKER_WSL2.md](./DEPLOY_DOCKER_WSL2.md) for steps to enable Docker Desktop WSL2 integration and deploy with `docker compose`.
+
 > [!NOTE]  
 > Please note that for certain Docker environments, additional configurations might be needed. If you encounter any connection issues, our detailed guide on [Open WebUI Documentation](https://docs.openwebui.com/) is ready to assist you.
 
